@@ -141,6 +141,7 @@ vite.config.ts.timestamp-*
 # Extra
 .git
 .github
+test.js
 
 #AI
 .claude

@@ -1,17 +1,10 @@
 
 const server = require('./backend/server.js');
-const { sequelize } = require('./backend/connection/sequelize.js');
-const { core_conn_initialize_database } = require('./backend/connection/connection.js');
-const { core_conn_ensure_database } = require('./backend/connection/utiles.js');
-const { PORT, DB_NAME } = process.env;
+const PORT = 3002;
 
 
 async function core_start_server() {
 	try {
-		// Inicializar base de datos con tipos personalizados
-		await core_conn_ensure_database(DB_NAME);
-		await core_conn_initialize_database(sequelize);
-
 
 		// Iniciar servidor
 		server.listen(PORT, () => {
